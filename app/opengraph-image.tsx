@@ -32,7 +32,7 @@ export default async function Image() {
         }}
       >
         <img
-          src="https://postcard-polska.vercel.app/warszawska_syrenka_postcard_front.JPG"
+          src="/warszawska_syrenka_postcard_front.JPG"
           alt={alt}
           style={{
             width: '100%',
