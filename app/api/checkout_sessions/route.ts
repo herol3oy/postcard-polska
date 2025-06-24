@@ -2,6 +2,7 @@ import { stripe } from '@/lib/stripe';
 import { headers } from 'next/headers';
 import { NextResponse } from 'next/server';
 
+export const runtime = "edge";
 
 export async function POST() {
   try {
@@ -21,11 +22,17 @@ export async function POST() {
       success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/?canceled=true`,
     });
-    return NextResponse.redirect(session.url, 303)
+
+    if (!session.url) {
+      throw new Error("Failed to create checkout session");
+    }
+
+    return NextResponse.redirect(session.url, 303);
   } catch (err) {
+    const error = err as Error & { statusCode?: number };
     return NextResponse.json(
-      { error: err.message },
-      { status: err.statusCode || 500 }
-    )
+      { error: error.message },
+      { status: error.statusCode || 500 }
+    );
   }
 }

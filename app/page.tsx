@@ -1,9 +1,11 @@
 import Image from "next/image";
 
+export const runtime = "edge";
+
 export default async function Home({
   searchParams,
 }: {
-  searchParams: { canceled: boolean };
+  searchParams: Promise<{ canceled: boolean }>;
 }) {
   const { canceled } = await searchParams;
 
