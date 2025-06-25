@@ -1,6 +1,13 @@
 import Image from "next/image";
 
-import { ShoppingCart, Sparkles, Truck, XCircle } from "lucide-react";
+import {
+  CreditCard,
+  ShoppingCart,
+  Smartphone,
+  Sparkles,
+  Truck,
+  XCircle,
+} from "lucide-react";
 
 export const runtime = "edge";
 
@@ -56,7 +63,7 @@ export default async function Home({
               </p>
             </div>
 
-            <div className="bg-gray-800 border border-rose-400 rounded-xl px-4 py-4 sm:p-6 space-y-2 sm:space-y-3 shadow-inner">
+            <div className="bg-gray-800 border border-rose-400 rounded-xl px-4 py-4 sm:p-6 space-y-2 sm:space-y-3 shadow-inner transition-colors duration-300 hover:border-rose-300">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-3">
                 <p className="text-lg sm:text-xl font-semibold text-rose-200 flex items-center gap-2">
                   <ShoppingCart size={18} />
@@ -76,11 +83,26 @@ export default async function Home({
               </p>
             )}
 
+            <div className="flex items-center gap-3 text-gray-400 text-sm">
+              <span className="flex items-center gap-1">
+                <CreditCard size={14} />
+                Visa
+              </span>
+              <span className="flex items-center gap-1">
+                <CreditCard size={14} />
+                MasterCard
+              </span>
+              <span className="flex items-center gap-1">
+                <Smartphone size={14} />
+                BLIK
+              </span>
+            </div>
+
             <form action="/api/checkout_sessions" method="POST">
               <button
                 type="submit"
                 role="link"
-                className="mt-4 bg-rose-500 hover:bg-rose-600 active:scale-95 transition-transform duration-150 text-white px-6 py-3 rounded-full font-medium shadow-md flex items-center justify-center gap-2"
+                className="mt-4 bg-gradient-to-r bg-rose-500 active:scale-95 transition-all duration-300 text-white px-6 py-3 rounded-full font-medium shadow-md flex items-center justify-center gap-2"
               >
                 <ShoppingCart size={18} />
                 Buy Now
