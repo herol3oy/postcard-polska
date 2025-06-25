@@ -27,8 +27,8 @@ export default async function Home({
         <p className="text-sm mt-2 text-gray-400 italic">Sealed with love 💌</p>
       </header>
 
-      <main className="flex-grow px-4 sm:px-8 py-12">
-        <section className="max-w-6xl mx-auto bg-[#1f2937] rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-y-12 lg:gap-y-0">
+      <main className="max-w-6xl mx-auto flex-grow px-4 sm:px-8 py-12">
+        <section className="flex max-w-fit justify-center mx-auto bg-[#1f2937] rounded-3xl shadow-2xl overflow-hidden gap-y-12 lg:gap-y-0">
           <figure className="bg-gray-800">
             <Image
               src="/warszawska_syrenka_postcard_front.JPG"
@@ -41,28 +41,42 @@ export default async function Home({
             />
           </figure>
 
-          <article className="p-8 sm:p-10 space-y-6 flex flex-col justify-center">
-            <div className="space-y-3">
-              <div className="inline-flex items-center space-x-2 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">
-                <Sparkles size={14} />
-                <span>Limited Edition</span>
-              </div>
+          <figure className="bg-gray-800">
+            <Image
+              src="/warszawska_syrenka_postcard_photo_w_miasto.JPG"
+              alt="Warszawska Syrenka Postcard photo with city"
+              width={800}
+              height={1000}
+              className="object-cover w-full h-full"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8/B8AAosBxERSgsYAAAAASUVORK5CYII="
+            />
+          </figure>
+        </section>
 
-              <h2 className="text-3xl sm:text-4xl font-bold text-rose-400">
-                Warszawska Syrenka Postcard
-              </h2>
-
-              <p className="text-gray-300 leading-relaxed">
-                I’ve loved postcards for years — each one a surprise filled with
-                charm, especially when it’s a message from a friend abroad.
-                <br />
-                <br />
-                This one features an original illustration of the{" "}
-                <strong>Warsaw Mermaid</strong> (Syrenka), hand-drawn by my
-                sister and printed on thick, matte card.
-              </p>
+        <article className="p-8 sm:p-10 space-y-6 block md:flex gap-5 justify-center">
+          <div className="flex-1 space-y-3">
+            <div className="inline-flex items-center space-x-2 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">
+              <Sparkles size={14} />
+              <span>Limited Edition</span>
             </div>
 
+            <h2 className="text-3xl sm:text-4xl font-bold text-rose-400">
+              Warszawska Syrenka Postcard
+            </h2>
+
+            <p className="text-gray-300 leading-relaxed">
+              I’ve loved postcards for years — each one a surprise filled with
+              charm, especially when it’s a message from a friend abroad.
+              <br />
+              <br />
+              This one features an original illustration of the{" "}
+              <strong>Warsaw Mermaid</strong> (Syrenka), hand-drawn by my sister
+              and printed on thick, matte card.
+            </p>
+          </div>
+
+          <div className="flex-1 space-y-6">
             <div className="bg-gray-800 border border-rose-400 rounded-xl px-4 py-4 sm:p-6 space-y-2 sm:space-y-3 shadow-inner transition-colors duration-300 hover:border-rose-300">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-3">
                 <p className="text-lg sm:text-xl font-semibold text-rose-200 flex items-center gap-2">
@@ -75,13 +89,6 @@ export default async function Home({
                 </p>
               </div>
             </div>
-
-            {canceled && (
-              <p className="text-sm text-red-400 bg-red-900/30 p-3 rounded-md border border-red-600 flex items-center gap-2">
-                <XCircle size={16} />
-                Order canceled — you can continue shopping when you’re ready.
-              </p>
-            )}
 
             <div className="flex items-center gap-3 text-gray-400 text-sm">
               <span className="flex items-center gap-1">
@@ -108,12 +115,18 @@ export default async function Home({
                 Buy Now
               </button>
             </form>
-          </article>
-        </section>
+            {canceled && (
+              <p className="text-sm text-red-400 bg-red-900/30 p-3 rounded-md border border-red-600 flex items-center gap-2">
+                <XCircle size={16} />
+                Order canceled — you can continue shopping when you’re ready.
+              </p>
+            )}
+          </div>
+        </article>
       </main>
 
       <footer className="py-6 text-center text-sm text-gray-500">
-        &copy; {new Date().getFullYear()} Postcard Polska — All rights reserved
+        &copy; {new Date().getFullYear()} Postcard Polska
       </footer>
     </div>
   );
