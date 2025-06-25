@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { ShoppingCart, Sparkles, Truck, XCircle } from "lucide-react";
+
 export const runtime = "edge";
 
 export default async function Home({
@@ -10,12 +12,12 @@ export default async function Home({
   const { canceled } = await searchParams;
 
   return (
-    <div className="min-h-screen flex  flex-col bg-[#111827] text-white font-sans">
-      <header className="py-8 text-center">
-        <h1 className="text-4xl font-extrabold tracking-tight text-rose-400">
+    <div className="min-h-screen flex flex-col bg-[#111827] text-white font-sans">
+      <header className="py-10 text-center">
+        <h1 className="text-5xl font-extrabold tracking-tight text-rose-400 drop-shadow-sm">
           Postcard Polska
         </h1>
-        <p className="text-sm mt-1 text-gray-400">Sealed with love 💌</p>
+        <p className="text-sm mt-2 text-gray-400 italic">Sealed with love 💌</p>
       </header>
 
       <main className="flex-grow px-4 sm:px-8 py-12">
@@ -28,40 +30,48 @@ export default async function Home({
               height={1000}
               className="object-cover w-full h-full"
               placeholder="blur"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8/B8AAosBxERSgsYAAAAASUVORK5CYII="
+              blurDataURL="data:image/png;base64,..."
             />
           </figure>
 
           <article className="p-8 sm:p-10 space-y-6 flex flex-col justify-center">
             <div className="space-y-3">
-              <div className=" max-w-max bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full shadow-md uppercase">
-                Limited Edition
+              <div className="inline-flex items-center space-x-2 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">
+                <Sparkles size={14} />
+                <span>Limited Edition</span>
               </div>
-              <h2 className="text-3xl font-bold text-rose-400">
+
+              <h2 className="text-3xl sm:text-4xl font-bold text-rose-400">
                 Warszawska Syrenka Postcard
               </h2>
+
               <p className="text-gray-300 leading-relaxed">
                 I’ve loved postcards for years — each one a surprise filled with
-                charm. Specially when it’s a message from a friend abroad. The
-                postcard brings a magic to your mailbox.
+                charm, especially when it’s a message from a friend abroad.
                 <br />
                 <br />
                 This one features an original illustration of the{" "}
-                <strong>Warsaw Mermaid</strong> (Syrenka), drawn by my sister.
+                <strong>Warsaw Mermaid</strong> (Syrenka), hand-drawn by my
+                sister and printed on thick, matte card.
               </p>
             </div>
 
-            <div className="bg-gray-800 border border-rose-400 rounded-xl p-6 space-y-3 shadow-inner">
-              <p className="text-xl font-semibold text-rose-200">
-                10 Printed Postcards — <span className="font-bold">60 PLN</span>
-              </p>
-              <p className="text-sm text-gray-400">
-                Free delivery within Poland 🇵🇱
-              </p>
+            <div className="bg-gray-800 border border-rose-400 rounded-xl px-4 py-4 sm:p-6 space-y-2 sm:space-y-3 shadow-inner">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-3">
+                <p className="text-lg sm:text-xl font-semibold text-rose-200 flex items-center gap-2">
+                  <ShoppingCart size={18} />
+                  10 Postcards — <span className="font-bold">60 PLN</span>
+                </p>
+                <p className="text-sm text-gray-400 flex items-center gap-1">
+                  <Truck size={14} />
+                  Free Poland delivery
+                </p>
+              </div>
             </div>
 
             {canceled && (
-              <p className="text-sm text-red-400 bg-red-900/30 p-2 rounded-md border border-red-600">
+              <p className="text-sm text-red-400 bg-red-900/30 p-3 rounded-md border border-red-600 flex items-center gap-2">
+                <XCircle size={16} />
                 Order canceled — you can continue shopping when you’re ready.
               </p>
             )}
@@ -70,8 +80,9 @@ export default async function Home({
               <button
                 type="submit"
                 role="link"
-                className="mt-4 bg-rose-500 hover:bg-rose-600 text-white px-6 py-3 rounded-full font-medium shadow-md transition"
+                className="mt-4 bg-rose-500 hover:bg-rose-600 active:scale-95 transition-transform duration-150 text-white px-6 py-3 rounded-full font-medium shadow-md flex items-center justify-center gap-2"
               >
+                <ShoppingCart size={18} />
                 Buy Now
               </button>
             </form>
@@ -80,7 +91,7 @@ export default async function Home({
       </main>
 
       <footer className="py-6 text-center text-sm text-gray-500">
-        All rights reserved &copy; {new Date().getFullYear()}
+        &copy; {new Date().getFullYear()} Postcard Polska — All rights reserved
       </footer>
     </div>
   );
