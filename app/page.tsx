@@ -54,32 +54,59 @@ export default async function Home({
                 stock.
               </p>
 
-              <div className="flex flex-col gap-3 bg-white/5 border border-rose-500/30 backdrop-blur-sm p-5 rounded-2xl shadow-inner">
-                <p className="text-base sm:text-lg font-semibold flex items-center gap-2 text-rose-200">
-                  <ShoppingCart size={18} className="text-rose-300" />
-                  10 Postcards —{" "}
-                  <span className="font-bold text-white">60 PLN</span>
-                </p>
+              <div className="flex flex-col gap-4 bg-gray-800/30 border border-gray-700/50 backdrop-blur-sm p-5 rounded-xl shadow-inner">
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 bg-gray-700/40 rounded-lg border border-gray-600/30">
+                      <ShoppingCart size={20} className="text-rose-400/90" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-medium text-gray-400/90 tracking-wide">
+                        POSTCARD SET
+                      </p>
+                      <p className="text-lg font-semibold text-white">
+                        10 Cards • <span className="text-rose-300">60 PLN</span>
+                      </p>
+                    </div>
+                  </div>
 
-                <p className="text-sm text-gray-400 flex items-center gap-2">
-                  <Truck size={14} className="text-gray-300" />
-                  Free delivery in Poland
-                </p>
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 bg-gray-700/40 rounded-lg border border-gray-600/30">
+                      <Truck size={20} className="text-indigo-400/90" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-medium text-gray-400/90 tracking-wide">
+                        DELIVERY
+                      </p>
+                      <p className="text-base font-medium text-white">
+                        Free <span className="text-gray-300">in Poland</span> •
+                        2-3 days
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
-                <div className="flex flex-wrap items-center gap-3 pt-1 text-xs text-gray-300">
-                  {["BLIK", "Visa", "MasterCard"].map((label, idx) => (
-                    <span
-                      key={idx}
-                      className="flex items-center gap-1 bg-white/10 px-2 py-1 rounded-full backdrop-blur-sm border border-white/10"
-                    >
-                      {label === "BLIK" ? (
-                        <Smartphone size={14} />
-                      ) : (
-                        <CreditCard size={14} />
-                      )}
-                      {label}
-                    </span>
-                  ))}
+                <div className="pt-2">
+                  <p className="text-xs text-gray-400 mb-2 ml-1">
+                    PAYMENT METHODS
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {["BLIK", "Visa", "MasterCard"].map((label, idx) => (
+                      <span
+                        key={idx}
+                        className="flex items-center gap-1.5 bg-gray-700/50 px-3 py-1.5 rounded-lg text-sm border border-gray-600/40 hover:border-gray-500/60 transition-colors"
+                      >
+                        {label === "BLIK" ? (
+                          <Smartphone size={14} className="text-blue-400/90" />
+                        ) : (
+                          <CreditCard size={14} className="text-amber-400/90" />
+                        )}
+                        <span className="font-medium text-gray-200">
+                          {label}
+                        </span>
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
 
