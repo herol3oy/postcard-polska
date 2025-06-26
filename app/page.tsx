@@ -49,9 +49,13 @@ export default async function Home({
               </h2>
 
               <p className="text-sm text-gray-300 leading-relaxed">
-                A tribute to Warsaw’s iconic <strong>Syrenka</strong>. This
-                postcard was hand-illustrated and printed on premium matte
-                stock.
+                I’ve always loved collecting postcards, especially those sent
+                from friends abroad. They are small surprises that brighten my
+                day. Inspired by this, I teamed up with my sister, a talented
+                illustrator, to create unique postcard featuring the iconic
+                Syrenka. We’re excited to share these special card. Send a
+                postcard to someone you care about and add your own personal
+                touch. It’s a simple way to show you’re thinking of them 📮
               </p>
 
               <div className="flex flex-col gap-4 bg-gray-800/30 border border-gray-700/50 backdrop-blur-sm p-5 rounded-xl shadow-inner">
@@ -65,7 +69,8 @@ export default async function Home({
                         POSTCARD SET
                       </p>
                       <p className="text-lg font-semibold text-white">
-                        10 Cards • <span className="text-purple-300">60 PLN</span>
+                        10 Cards •{" "}
+                        <span className="text-purple-300">60 PLN</span>
                       </p>
                     </div>
                   </div>
