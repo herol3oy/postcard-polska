@@ -16,7 +16,8 @@
     "next": "15.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "stripe": "^18.2.1"
+    "stripe": "^18.2.1",
+    "swiper": "^11.2.8"
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.13.12",
