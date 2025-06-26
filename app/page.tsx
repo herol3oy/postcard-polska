@@ -21,7 +21,7 @@ export default async function Home({
   return (
     <div className="min-h-screen bg-gradient-to-br bg-gray-900 text-white font-sans relative overflow-hidden">
       <header className="text-center py-8 relative z-10">
-        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-rose-600 drop-shadow-sm">
+        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-purple-500 drop-shadow-sm">
           Postcard Polska
         </h1>
         <small className="text-base sm:text-lg mt-3 text-gray-500 italic">
@@ -44,7 +44,7 @@ export default async function Home({
                 Limited Print
               </span>
 
-              <h2 className="text-4xl font-bold text-rose-500">
+              <h2 className="text-4xl font-bold text-purple-400">
                 Warszawska Syrenka Postcard
               </h2>
 
@@ -58,14 +58,14 @@ export default async function Home({
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center gap-3">
                     <div className="p-2.5 bg-gray-700/40 rounded-lg border border-gray-600/30">
-                      <ShoppingCart size={20} className="text-rose-400/90" />
+                      <ShoppingCart size={20} className="text-purple-400/90" />
                     </div>
                     <div>
                       <p className="text-xs font-medium text-gray-400/90 tracking-wide">
                         POSTCARD SET
                       </p>
                       <p className="text-lg font-semibold text-white">
-                        10 Cards • <span className="text-rose-300">60 PLN</span>
+                        10 Cards • <span className="text-purple-300">60 PLN</span>
                       </p>
                     </div>
                   </div>
@@ -114,7 +114,7 @@ export default async function Home({
                 <button
                   type="submit"
                   role="link"
-                  className="w-full mt-4 bg-rose-600 hover:bg-rose-700 active:scale-95 transition-transform duration-200 text-white px-6 py-3 rounded-full font-bold shadow-md hover:shadow-xl flex items-center justify-center gap-2"
+                  className="w-full mt-4 bg-purple-600 hover:bg-purple-700 active:scale-95 transition-transform duration-200 text-white px-6 py-3 rounded-full font-bold shadow-md hover:shadow-xl flex items-center justify-center gap-2"
                 >
                   <ShoppingCart size={20} />
                   Buy Now
