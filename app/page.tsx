@@ -19,47 +19,42 @@ export default async function Home({
   const { canceled } = await searchParams;
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#111827] text-white font-sans">
+    <div className="min-h-screen flex flex-col bg-gray-900 text-white font-sans">
       <header className="py-10 text-center">
-        <h1 className="text-5xl font-extrabold tracking-tight text-rose-400 drop-shadow-sm">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-rose-400 drop-shadow">
           Postcard Polska
         </h1>
+
         <p className="text-sm mt-2 text-gray-400 italic">Sealed with love 💌</p>
       </header>
 
-      <main className="max-w-6xl mx-auto flex-grow px-4 sm:px-8 py-12">
-        <section className="flex max-w-fit justify-center mx-auto bg-[#1f2937] rounded-3xl shadow-2xl overflow-hidden gap-y-12 lg:gap-y-0">
-          <figure className="bg-gray-800">
+      <main className="flex-grow max-w-6xl mx-auto px-4 sm:px-8 py-12">
+        <section className="flex flex-col lg:flex-row justify-center gap-6 bg-gray-800 rounded-3xl shadow-xl overflow-hidden p-4">
+          {[
+            "/warszawska_syrenka_postcard_front.JPG",
+            "/warszawska_syrenka_postcard_photo_w_miasto.JPG",
+          ].map((src, idx) => (
             <Image
-              src="/warszawska_syrenka_postcard_front.JPG"
-              alt="Warszawska Syrenka Postcard front"
+              key={idx}
+              src={src}
+              alt={`Warszawska Syrenka Postcard ${
+                idx === 0 ? "Front" : "Photo with City"
+              }`}
               width={800}
               height={1000}
-              className="object-cover w-full h-full"
+              className="rounded-xl object-cover w-full h-auto"
               placeholder="blur"
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8/B8AAosBxERSgsYAAAAASUVORK5CYII="
             />
-          </figure>
-
-          <figure className="bg-gray-800">
-            <Image
-              src="/warszawska_syrenka_postcard_photo_w_miasto.JPG"
-              alt="Warszawska Syrenka Postcard photo with city"
-              width={800}
-              height={1000}
-              className="object-cover w-full h-full"
-              placeholder="blur"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8/B8AAosBxERSgsYAAAAASUVORK5CYII="
-            />
-          </figure>
+          ))}
         </section>
 
-        <article className="p-8 sm:p-10 space-y-6 block md:flex gap-5 justify-center">
-          <div className="flex-1 space-y-3">
-            <div className="inline-flex items-center space-x-2 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">
+        <article className="mt-12 flex flex-col md:flex-row gap-8">
+          <div className="flex-1 space-y-4">
+            <span className="inline-flex items-center gap-2 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full shadow uppercase tracking-wide">
               <Sparkles size={14} />
-              <span>Limited Edition</span>
-            </div>
+              Limited Edition
+            </span>
 
             <h2 className="text-3xl sm:text-4xl font-bold text-rose-400">
               Warszawska Syrenka Postcard
@@ -77,9 +72,9 @@ export default async function Home({
           </div>
 
           <div className="flex-1 space-y-6">
-            <div className="bg-gray-800 border border-rose-400 rounded-xl px-4 py-4 sm:p-6 space-y-2 sm:space-y-3 shadow-inner transition-colors duration-300 hover:border-rose-300">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-3">
-                <p className="text-lg sm:text-xl font-semibold text-rose-200 flex items-center gap-2">
+            <div className="bg-gray-800 border border-rose-400 hover:border-rose-300 rounded-xl p-6 shadow-inner transition-colors">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                <p className="text-lg font-semibold text-rose-200 flex items-center gap-2">
                   <ShoppingCart size={18} />
                   10 Postcards — <span className="font-bold">60 PLN</span>
                 </p>
@@ -90,33 +85,32 @@ export default async function Home({
               </div>
             </div>
 
-            <div className="flex items-center gap-3 text-gray-400 text-sm">
-              <span className="flex items-center gap-1">
-                <CreditCard size={14} />
-                Visa
-              </span>
-              <span className="flex items-center gap-1">
-                <CreditCard size={14} />
-                MasterCard
-              </span>
-              <span className="flex items-center gap-1">
-                <Smartphone size={14} />
-                BLIK
-              </span>
+            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400">
+              {["Visa", "MasterCard", "BLIK"].map((label, idx) => (
+                <span key={idx} className="flex items-center gap-1">
+                  {label === "BLIK" ? (
+                    <Smartphone size={14} />
+                  ) : (
+                    <CreditCard size={14} />
+                  )}
+                  {label}
+                </span>
+              ))}
             </div>
 
             <form action="/api/checkout_sessions" method="POST">
               <button
                 type="submit"
                 role="link"
-                className="mt-4 bg-gradient-to-r bg-rose-500 active:scale-95 transition-all duration-300 text-white px-6 py-3 rounded-full font-medium shadow-md flex items-center justify-center gap-2"
+                className="w-full sm:w-auto mt-4 bg-rose-500 hover:bg-rose-600 active:scale-95 transition-all text-white px-6 py-3 rounded-full font-medium shadow-md flex items-center justify-center gap-2"
               >
                 <ShoppingCart size={18} />
                 Buy Now
               </button>
             </form>
+
             {canceled && (
-              <p className="text-sm text-red-400 bg-red-900/30 p-3 rounded-md border border-red-600 flex items-center gap-2">
+              <p className="text-sm text-red-400 bg-red-900/30 p-3 rounded-md border border-red-600 flex items-center gap-2 mt-2">
                 <XCircle size={16} />
                 Order canceled — you can continue shopping when you’re ready.
               </p>
@@ -125,7 +119,7 @@ export default async function Home({
         </article>
       </main>
 
-      <footer className="py-6 text-center text-sm text-gray-500">
+      <footer className="py-6 text-center text-sm text-gray-500 border-t border-gray-800">
         &copy; {new Date().getFullYear()} Postcard Polska
       </footer>
     </div>
