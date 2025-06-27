@@ -44,16 +44,16 @@ export default function RootLayout({
           >
             Postcard Polska
           </h1>
-          <span className="text-base sm:text-lg mt-3 text-gray-500 italic">
+          <span className="text-base sm:text-lg mt-3 text-gray-300 italic">
             Sealed with love 💌
           </span>
         </header>
         {children}
-        <footer className="text-center text-sm text-gray-500 py-6 mt-12 border-t border-gray-500/20 relative z-10">
-          &copy; {new Date().getFullYear()} Postcard Polska ·
+        <footer className="text-center text-sm text-gray-300 py-6 mt-12 border-t border-gray-500/20 relative z-10">
+          &copy; {new Date().getFullYear()} Postcard Polska ·{" "}
           <a
             href="mailto:hamed@postcardpolska.pl"
-            className="text-purple-400 hover:text-purple-300 transition-colors ml-1"
+            className="text-purple-400 hover:text-purple-300 underline"
           >
             hamed@postcardpolska.pl
           </a>
