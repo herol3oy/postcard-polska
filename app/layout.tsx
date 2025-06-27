@@ -1,6 +1,14 @@
 import { Metadata } from "next";
 import "./globals.css";
 
+import { Playfair_Display } from "next/font/google";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Postcard Polska | Buy the most beautiful Warsaw postcard",
   description:
@@ -29,7 +37,28 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="bg-gray-900">
+        <header className="text-center py-8 relative z-10">
+          <h1
+            className={`text-3xl sm:text-4xl font-bold tracking-tight text-purple-500 drop-shadow-sm ${playfair.className}`}
+          >
+            Postcard Polska
+          </h1>
+          <span className="text-base sm:text-lg mt-3 text-gray-500 italic">
+            Sealed with love 💌
+          </span>
+        </header>
+        {children}
+        <footer className="text-center text-sm text-gray-500 py-6 mt-12 border-t border-gray-500/20 relative z-10">
+          &copy; {new Date().getFullYear()} Postcard Polska ·
+          <a
+            href="mailto:hamed@postcardpolska.pl"
+            className="text-purple-400 hover:text-purple-300 transition-colors ml-1"
+          >
+            hamed@postcardpolska.pl
+          </a>
+        </footer>
+      </body>
     </html>
   );
 }

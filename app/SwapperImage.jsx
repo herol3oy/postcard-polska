@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import { Autoplay, Navigation } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -13,8 +13,7 @@ export const SwapperImage = () => {
     <Swiper
       navigation
       loop
-      modules={[Navigation, Autoplay]}
-      autoplay={{ delay: 4000, disableOnInteraction: false }}
+      modules={[Navigation]}
       spaceBetween={10}
       slidesPerView={1}
       className="rounded-xl overflow-hidden"

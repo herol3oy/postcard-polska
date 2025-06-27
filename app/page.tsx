@@ -2,7 +2,6 @@ import {
   CreditCard,
   ShoppingCart,
   Smartphone,
-  Sparkles,
   Truck,
   XCircle,
 } from "lucide-react";
@@ -19,43 +18,60 @@ export default async function Home({
   const { canceled } = await searchParams;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br bg-gray-900 text-white font-sans relative overflow-hidden">
-      <header className="text-center py-8 relative z-10">
-        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-purple-500 drop-shadow-sm">
-          Postcard Polska
-        </h1>
-        <small className="text-base sm:text-lg mt-3 text-gray-500 italic">
-          Sealed with love 💌
-        </small>
-      </header>
-
+    <div className="min-h-screen text-white font-sans relative overflow-hidden">
       <main className="flex flex-col items-center justify-center px-4 sm:px-8 py-8 relative z-10">
+        <section className="mb-10 text-center max-w-3xl mx-auto px-6">
+          <p className="text-sm sm:text-base text-yellow-400 uppercase tracking-widest font-semibold mb-2">
+            New Series Launch
+          </p>
+
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+            A Postcard Series Celebrating Poland
+          </h2>
+
+          <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
+            I’m excited to introduce a series of illustrated postcards inspired
+            by the beauty and stories of Poland. This is the{" "}
+            <span className="text-yellow-300 font-semibold">
+              very first postcard
+            </span>{" "}
+            in the collection — each one tells a unique story, and this one
+            features the legendary <em>Syrenka</em> of Warsaw.
+          </p>
+        </section>
+
         <section className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl max-w-5xl w-full p-6">
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="w-full lg:w-1/2 space-y-4">
               <div className="relative rounded-xl overflow-hidden shadow-xl">
                 <SwapperImage />
+                <div className="absolute top-2 left-2 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded-full shadow-lg z-20">
+                  #1
+                </div>
               </div>
             </div>
 
             <div className="w-full lg:w-1/2 space-y-6">
-              <span className="inline-flex items-center gap-2 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
-                <Sparkles size={14} />
-                Limited Print
-              </span>
-
-              <h2 className="text-4xl font-bold text-purple-400">
-                Warszawska Syrenka Postcard
-              </h2>
-
+              <div className="flex flex-col gap-2">
+                <span className="max-w-fit gap-2 bg-blue-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+                  🥇 First Edition
+                </span>
+                <h2 className="text-4xl font-bold text-purple-400">
+                  Syrenka Postcard
+                  <span className="block text-2xl font-normal text-purple-300 mt-1">
+                    Greetings from Warsaw
+                  </span>
+                </h2>
+              </div>
               <p className="text-sm text-gray-300 leading-relaxed">
                 I’ve always loved collecting postcards, especially those sent
                 from friends abroad. They are small surprises that brighten my
                 day. Inspired by this, I teamed up with my sister, a talented
-                illustrator, to create unique postcard featuring the iconic
-                Syrenka. We’re excited to share these special card. Send a
-                postcard to someone you care about and add your own personal
-                touch. It’s a simple way to show you’re thinking of them 📮
+                illustrator, to create a unique postcard featuring the iconic
+                Syrenka. I’m excited to share this first card in our new series.
+                send this first postcard in the series to someone you care about
+                and add your own personal touch. It’s a simple way to show
+                you’re thinking of them 📮
               </p>
 
               <div className="flex flex-col gap-4 bg-gray-800/30 border border-gray-700/50 backdrop-blur-sm p-5 rounded-xl shadow-inner">
@@ -70,7 +86,7 @@ export default async function Home({
                       </p>
                       <p className="text-lg font-semibold text-white">
                         10 Cards •{" "}
-                        <span className="text-purple-300">60 PLN</span>
+                        <span className="text-purple-300">50 PLN</span>
                       </p>
                     </div>
                   </div>
@@ -84,8 +100,7 @@ export default async function Home({
                         DELIVERY
                       </p>
                       <p className="text-base font-medium text-white">
-                        Free <span className="text-gray-300">in Poland</span> •
-                        2-3 days
+                        Free <span className="text-gray-300">in Poland</span>
                       </p>
                     </div>
                   </div>
@@ -136,10 +151,6 @@ export default async function Home({
           </div>
         </section>
       </main>
-
-      <footer className="text-center text-sm text-gray-500 py-6 mt-12 border-t border-gray-500/20 relative z-10">
-        &copy; {new Date().getFullYear()} Postcard Polska.
-      </footer>
     </div>
   );
 }
