@@ -26,17 +26,45 @@ export default async function Home({
           </p>
 
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-            A Postcard Series Celebrating Poland
+            A Postcard Series from Poland
           </h2>
 
           <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
             I’m excited to introduce a series of illustrated postcards inspired
-            by the beauty and stories of Poland. This is the{" "}
-            <span className="text-yellow-300 font-semibold">
+            by the stories of Poland. This is the{" "}
+            <span className="relative text-yellow-300 font-semibold inline-block">
               very first postcard
+              <svg
+                className="absolute bottom-0 left-0 w-full h-2"
+                viewBox="0 0 100 10"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M0,5 C30,10 70,0 100,5"
+                  stroke="#facc15"
+                  strokeWidth="2"
+                  fill="none"
+                />
+              </svg>
             </span>{" "}
-            in the collection — each one tells a unique story, and this one
-            features the legendary <em>Syrenka</em> of Warsaw.
+            in the collection. Each one tells a unique story, and this one
+            features the legendary{" "}
+            <span className="relative inline-block text-yellow-300 font-semibold">
+              Syrenka
+              <svg
+                className="absolute bottom-0 left-0 w-full h-2"
+                viewBox="0 0 100 10"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M0,7 C25,10 75,2 100,7"
+                  stroke="#facc15"
+                  strokeWidth="2"
+                  fill="none"
+                />
+              </svg>
+            </span>{" "}
+            of Warsaw.
           </p>
         </section>
 
@@ -65,13 +93,13 @@ export default async function Home({
               </div>
               <p className="text-sm text-gray-300 leading-relaxed">
                 I’ve always loved collecting postcards, especially those sent
-                from friends abroad. They are small surprises that brighten my
-                day. Inspired by this, I teamed up with my sister, a talented
+                from friends abroad. They are small surprises that make me
+                smile. Inspired by this, I teamed up with my sister, a talented
                 illustrator, to create a unique postcard featuring the iconic
                 Syrenka. I’m excited to share this first card in our new series.
-                send this first postcard in the series to someone you care about
+                Send this first postcard in the series to someone you care about
                 and add your own personal touch. It’s a simple way to show
-                you’re thinking of them 📮
+                you’re thinking of them (and yes, my fridge is covered!)
               </p>
 
               <div className="flex flex-col gap-4 bg-gray-800/30 border border-gray-700/50 backdrop-blur-sm p-5 rounded-xl shadow-inner">
