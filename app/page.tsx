@@ -1,13 +1,8 @@
-import {
-  CreditCard,
-  ShoppingCart,
-  Smartphone,
-  Truck,
-  XCircle,
-} from "lucide-react";
+import Image from "next/image";
+
+import { ShoppingCart, Truck, XCircle } from "lucide-react";
 
 import { SwapperImage } from "./SwapperImage";
-
 export const runtime = "edge";
 
 export default async function Home({
@@ -138,21 +133,22 @@ export default async function Home({
                   <p className="text-xs text-gray-400 mb-2 ml-1">
                     PAYMENT METHODS
                   </p>
+
                   <div className="flex flex-wrap gap-2">
-                    {["BLIK", "Visa", "MasterCard"].map((label, idx) => (
-                      <span
-                        key={idx}
-                        className="flex items-center gap-1.5 bg-gray-700/50 px-3 py-1.5 rounded-lg text-sm border border-gray-600/40 hover:border-gray-500/60 transition-colors"
-                      >
-                        {label === "BLIK" ? (
-                          <Smartphone size={14} className="text-blue-400/90" />
-                        ) : (
-                          <CreditCard size={14} className="text-amber-400/90" />
-                        )}
-                        <span className="font-medium text-gray-200">
-                          {label}
-                        </span>
-                      </span>
+                    {[
+                      "/logo-blik.svg",
+                      "/logo-visa.svg",
+                      "/logo-mastercard.svg",
+                    ].map((url) => (
+                      <Image
+                        key={url}
+                        width={35}
+                        height={25}
+                        src={url}
+                        alt="payment logo"
+                        placeholder="blur"
+                        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8/B8AAosBxERSgsYAAAAASUVORK5CYII="
+                      />
                     ))}
                   </div>
                 </div>

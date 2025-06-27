@@ -29,6 +29,7 @@ export const SwapperImage = () => {
             width={800}
             height={1000}
             className="object-cover w-full rounded-xl"
+            priority
             placeholder="blur"
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8/B8AAosBxERSgsYAAAAASUVORK5CYII="
           />
