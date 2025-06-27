@@ -12,7 +12,7 @@ export default async function Success({ searchParams }) {
 
   const {
     status,
-    customer_details: { email: customerEmail }
+    customer_details: { email: customerEmail },
   } = await stripe.checkout.sessions.retrieve(session_id, {
     expand: ['line_items', 'payment_intent']
   })
@@ -23,12 +23,15 @@ export default async function Success({ searchParams }) {
 
   if (status === 'complete') {
     return (
-      <section id="success">
-        <p>
-          I appreciate your business! A confirmation email will be sent to{' '}
-          {customerEmail}. If you have any questions, please email{' '}
+      <section className="p-5" id="success">
+        <p className="text-green-400">
+          I appreciate your business! A confirmation email will be sent to{" "}
+          {customerEmail}. If you have any questions, please email{" "}
         </p>
-        <a href="mailto:hamed@postcardpolska.pl">hamed@postcardpolska.pl</a>.
+        <a className="text-green-400" href="mailto:hamed@postcardpolska.pl">
+          hamed@postcardpolska.pl
+        </a>
+        .
       </section>
     )
   }
