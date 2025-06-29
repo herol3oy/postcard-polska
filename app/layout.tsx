@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import "./globals.css";
 
 import { Playfair_Display } from "next/font/google";
+import { GradientBackground } from "./GradientBackground";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -48,7 +49,9 @@ export default function RootLayout({
             Sealed with love 💌
           </span>
         </header>
-        {children}
+
+        <GradientBackground>{children}</GradientBackground>
+
         <footer className="text-center text-sm text-gray-300 py-6 mt-12 border-t border-gray-500/20 relative z-10">
           &copy; {new Date().getFullYear()} Postcard Polska ·{" "}
           <a
