@@ -20,10 +20,10 @@ export default async function Home({
             New Series Launch
           </p>
 
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-yellow-300 via-yellow-500 to-amber-600 mb-6">
             A Postcard Series from Poland
           </h2>
-
+          
           <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
             I’m excited to introduce a series of illustrated postcards inspired
             by the stories of Poland. This is the{" "}
