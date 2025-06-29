@@ -146,8 +146,6 @@ export default async function Home({
                         height={25}
                         src={url}
                         alt="payment logo"
-                        placeholder="blur"
-                        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8/B8AAosBxERSgsYAAAAASUVORK5CYII="
                       />
                     ))}
                   </div>

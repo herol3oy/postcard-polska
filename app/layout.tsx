@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-gray-900">
-        <header className="text-center py-8 relative z-10">
+        <header className="text-center border-b-1 border-gray-500/20 py-8">
           <h1
             className={`text-3xl sm:text-4xl font-bold tracking-tight text-purple-500 drop-shadow-sm ${playfair.className}`}
           >
@@ -52,13 +52,13 @@ export default function RootLayout({
 
         <GradientBackground>{children}</GradientBackground>
 
-        <footer className="text-center text-sm text-gray-300 py-6 mt-12 border-t border-gray-500/20 relative z-10">
-          &copy; {new Date().getFullYear()} Postcard Polska ·{" "}
+        <footer className="text-center text-sm text-gray-300 py-6 mt-12 border-t border-gray-500/20">
+          &copy; {new Date().getFullYear()} ·{" "}
           <a
-            href="mailto:hamed@postcardpolska.pl"
+            href="mailto:info@postcardpolska.pl"
             className="text-purple-400 hover:text-purple-300 underline"
           >
-            hamed@postcardpolska.pl
+            info@postcardpolska.pl
           </a>
         </footer>
       </body>
