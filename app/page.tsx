@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { ShoppingCart, Truck, XCircle } from "lucide-react";
 
@@ -23,7 +24,31 @@ export default async function Home({
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-yellow-300 via-yellow-500 to-amber-600 mb-6">
             A Postcard Series from Poland
           </h2>
-          
+
+          <div className="flex items-center justify-center mb-6">
+            <Image
+              src="/avatar.jpg"
+              width={80}
+              height={80}
+              alt="Hamed"
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-full mr-4 ring-2 ring-white shadow-md transition-transform duration-300 hover:scale-105 hover:-rotate-3"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8/B8AAosBxERSgsYAAAAASUVORK5CYII="
+            />
+            <span className="text-white font-medium text-lg sm:text-xl">
+              Hamed
+            </span>
+            <Link href="https://postcrossing.com/user/herol3oy" target="_blank">
+              <Image
+                alt="postcrossing logo"
+                src="/pc-logo.png"
+                width={24}
+                height={24}
+                className="ml-2 opacity-80 hover:opacity-100 transition-opacity"
+              />
+            </Link>
+          </div>
+
           <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
             I’m excited to introduce a series of illustrated postcards inspired
             by the stories of Poland. This is the{" "}
