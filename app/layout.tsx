@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description: "Sealed with love 💌",
     images: [
       {
-        url: "https://postcardpolska.pl/warszawska_syrenka_postcard_front.JPG",
+        url: "https://postcardpolska.pl/warszawska_syrenka_postcard_front.webp",
         width: 500,
         height: 698,
       },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    images: ["https://postcardpolska.pl/warszawska_syrenka_postcard_front.JPG"],
+    images: ["https://postcardpolska.pl/warszawska_syrenka_postcard_front.webp"],
   },
 };
 
