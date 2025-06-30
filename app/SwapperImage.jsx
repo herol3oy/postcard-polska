@@ -21,6 +21,8 @@ export const SwapperImage = () => {
       {[
         "/warszawska_syrenka_postcard_front.webp",
         "/warszawska_syrenka_postcard_photo_w_miasto.webp",
+        "/warszawska_syrenka_postcard_photo_w_ogrodzie.webp",
+        "/warszawska_syrenka_postcard_photo_w_ogrodzie_2.webp",
       ].map((src) => (
         <SwiperSlide key={src}>
           <Image
