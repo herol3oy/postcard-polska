@@ -19,6 +19,7 @@ export const SwapperImage = () => {
       className="rounded-xl overflow-hidden"
     >
       {[
+        "/warszawska_syrenka_postcard_mockup.webp",
         "/warszawska_syrenka_postcard_front.webp",
         "/warszawska_syrenka_postcard_photo_w_miasto.webp",
         "/warszawska_syrenka_postcard_photo_w_ogrodzie.webp",
@@ -34,7 +35,7 @@ export const SwapperImage = () => {
             sizes="(max-width: 768px) 100vw, 50vw"
             priority
             placeholder="blur"
-            format="webp" 
+            format="webp"
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM8/B8AAosBxERSgsYAAAAASUVORK5CYII="
           />
         </SwiperSlide>
