@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 
 import { stripe } from "../../lib/stripe";
 
-export const runtime = "edge";
+// export const runtime = "edge";
 
 export default async function Success({ searchParams }) {
   const { session_id } = await searchParams;

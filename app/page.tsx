@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { SwapperImage } from "./SwapperImage";
 
-export const runtime = "edge";
+// export const runtime = "edge";
 
 export default async function Home({
   searchParams,
