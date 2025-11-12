@@ -4,8 +4,6 @@ import Link from "next/link";
 
 import { SwapperImage } from "./SwapperImage";
 
-// export const runtime = "edge";
-
 export default async function Home({
   searchParams,
 }: {
@@ -25,7 +23,7 @@ export default async function Home({
             A Postcard Series from Poland
           </h2>
 
-          <div className="flex items-center justify-center mb-6">
+          {/* <div className="flex items-center justify-center mb-6">
             <Image
               src="/avatar.jpg"
               width={80}
@@ -47,7 +45,7 @@ export default async function Home({
                 className="ml-2 opacity-80 hover:opacity-100 transition-opacity"
               />
             </Link>
-          </div>
+          </div> */}
 
           <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
             I’m excited to introduce a series of illustrated postcards inspired
@@ -113,7 +111,7 @@ export default async function Home({
                   </span>
                 </h2>
               </div>
-              <p className="text-sm text-gray-300 leading-relaxed">
+              {/* <p className="text-sm text-gray-300 leading-relaxed">
                 I’ve always loved collecting postcards, especially those sent
                 from friends abroad. They are small surprises that make me
                 smile. Inspired by this, I teamed up with my sister, a talented
@@ -122,7 +120,7 @@ export default async function Home({
                 Send this first postcard in the series to someone you care about
                 and add your own personal touch. It’s a simple way to show
                 you’re thinking of them (and yes, my fridge is covered!)
-              </p>
+              </p> */}
 
               <div className="flex flex-col gap-4 bg-gray-800/30 border border-gray-700/50 backdrop-blur-sm p-5 rounded-xl shadow-inner">
                 <div className="flex flex-col gap-4">
