@@ -1,7 +1,8 @@
-import { Metadata } from "next";
 import "./globals.css";
 
+import type { Metadata } from "next";
 import { Playfair_Display } from "next/font/google";
+
 import { GradientBackground } from "./GradientBackground";
 
 const playfair = Playfair_Display({
@@ -27,7 +28,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    images: ["https://postcardpolska.pl/warszawska_syrenka_postcard_front.webp"],
+    images: [
+      "https://postcardpolska.pl/warszawska_syrenka_postcard_front.webp",
+    ],
   },
 };
 

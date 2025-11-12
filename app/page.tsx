@@ -1,9 +1,9 @@
+import { ShoppingCart, Truck, XCircle } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { ShoppingCart, Truck, XCircle } from "lucide-react";
-
 import { SwapperImage } from "./SwapperImage";
+
 export const runtime = "edge";
 
 export default async function Home({
@@ -59,6 +59,7 @@ export default async function Home({
                 viewBox="0 0 100 10"
                 preserveAspectRatio="none"
               >
+                <title>Underline</title>
                 <path
                   d="M0,5 C30,10 70,0 100,5"
                   stroke="#facc15"
@@ -76,6 +77,7 @@ export default async function Home({
                 viewBox="0 0 100 10"
                 preserveAspectRatio="none"
               >
+                <title>Underline</title>
                 <path
                   d="M0,7 C25,10 75,2 100,7"
                   stroke="#facc15"
@@ -177,10 +179,10 @@ export default async function Home({
                 </div>
               </div>
 
+
               <form action="/api/checkout_sessions" method="POST">
                 <button
                   type="submit"
-                  role="link"
                   className="w-full mt-4 bg-purple-600 hover:bg-purple-700 active:scale-95 transition-transform duration-200 text-white px-6 py-3 rounded-full font-bold shadow-md hover:shadow-xl flex items-center justify-center gap-2"
                 >
                   <ShoppingCart size={20} />
