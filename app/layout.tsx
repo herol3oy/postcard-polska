@@ -3,8 +3,6 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Playfair_Display } from "next/font/google";
 
-import { GradientBackground } from "./GradientBackground";
-
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -12,26 +10,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Postcard Polska | Buy the most beautiful Warsaw postcard",
+  title: "Warszawska Syrenka | Illustrated products from Poland",
   description:
-    "Buy the most beautiful Warsaw postcard featuring the iconic Warsaw Mermaid. Printed on premium matte stock with love from Poland.",
-  openGraph: {
-    title: "Warszawska Syrenka Postcard",
-    description: "Sealed with love 💌",
-    images: [
-      {
-        url: "https://postcardpolska.pl/warszawska_syrenka_postcard_front.webp",
-        width: 500,
-        height: 698,
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    images: [
-      "https://postcardpolska.pl/warszawska_syrenka_postcard_front.webp",
-    ],
-  },
+    "A series of illustrated products inspired by the stories of Poland. Postcards, apparel, and accessories featuring original artwork.",
 };
 
 export default function RootLayout({
@@ -41,28 +22,32 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-gray-900">
-        <header className="text-center border-b-1 border-gray-500/20 py-8">
-          <h1
-            className={`text-3xl sm:text-4xl font-bold tracking-tight text-purple-500 drop-shadow-sm ${playfair.className}`}
-          >
-            Postcard Polska
-          </h1>
-          <span className="text-base sm:text-lg mt-3 text-gray-300 italic">
-            Sealed with love 💌
-          </span>
+      <body className="bg-stone-50 text-stone-900 antialiased">
+        <header className="border-b border-stone-200 py-8 sm:py-10">
+          <div className="max-w-7xl mx-auto px-6 text-center">
+            <h1
+              className={`text-3xl sm:text-5xl font-bold tracking-tight text-purple-700 ${playfair.className}`}
+            >
+              Warszawska Syrenka
+            </h1>
+            <p className="text-base sm:text-lg mt-2 text-stone-400 italic">
+              Sealed with love
+            </p>
+          </div>
         </header>
 
-        <GradientBackground>{children}</GradientBackground>
+        <main className="min-h-screen">{children}</main>
 
-        <footer className="text-center text-sm text-gray-300 py-6 mt-12 border-t border-gray-500/20">
-          &copy; {new Date().getFullYear()} ·{" "}
-          <a
-            href="mailto:info@postcardpolska.pl"
-            className="text-purple-400 hover:text-purple-300 underline"
-          >
-            info@postcardpolska.pl
-          </a>
+        <footer className="text-center text-sm text-stone-400 py-8 mt-16 border-t border-stone-200">
+          <div className="max-w-7xl mx-auto px-6">
+            &copy; {new Date().getFullYear()} Warszawska Syrenka ·{" "}
+            <a
+              href="mailto:info@postcardpolska.pl"
+              className="text-purple-600 hover:text-purple-500 underline"
+            >
+              info@postcardpolska.pl
+            </a>
+          </div>
         </footer>
       </body>
     </html>
