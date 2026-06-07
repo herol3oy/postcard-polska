@@ -23,31 +23,26 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-stone-50 text-stone-900 antialiased">
-        <header className="border-b border-stone-200 py-8 sm:py-10">
-          <div className="max-w-7xl mx-auto px-6 text-center">
+        <header className="border-b border-stone-200 px-6">
+          <nav className="py-3 justify-center flex">
             <h1
-              className={`text-3xl sm:text-5xl font-bold tracking-tight text-purple-700 ${playfair.className}`}
+              className={`text-2xl font-bold tracking-tight text-purple-700 mx-auto {playfair.className}`}
             >
               Warszawska Syrenka
             </h1>
-            <p className="text-base sm:text-lg mt-2 text-stone-400 italic">
-              Sealed with love
-            </p>
-          </div>
+          </nav>
         </header>
 
         <main className="min-h-screen">{children}</main>
 
-        <footer className="text-center text-sm text-stone-400 py-8 mt-16 border-t border-stone-200">
-          <div className="max-w-7xl mx-auto px-6">
-            &copy; {new Date().getFullYear()} Warszawska Syrenka ·{" "}
-            <a
-              href="mailto:info@postcardpolska.pl"
-              className="text-purple-600 hover:text-purple-500 underline"
-            >
-              info@postcardpolska.pl
-            </a>
-          </div>
+        <footer className="text-center text-sm text-stone-400 py-8 mt-16 border-t border-stone-200 px-6">
+          &copy; {new Date().getFullYear()} Warszawska Syrenka ·{" "}
+          <a
+            href="mailto:info@postcardpolska.pl"
+            className="text-purple-600 hover:text-purple-500 underline"
+          >
+            info@postcardpolska.pl
+          </a>
         </footer>
       </body>
     </html>

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 interface Product {
   id: string;
@@ -12,6 +12,8 @@ interface Product {
 
 export function Gallery({ products }: { products: Product[] }) {
   const [selected, setSelected] = useState<number | null>(null);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   const handleClose = useCallback(() => setSelected(null), []);
   const handlePrev = useCallback(
@@ -22,6 +24,22 @@ export function Gallery({ products }: { products: Product[] }) {
     () =>
       setSelected((s) => (s !== null && s < products.length - 1 ? s + 1 : s)),
     [products.length],
+  );
+
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  }, []);
+
+  const handleTouchEnd = useCallback(
+    (e: React.TouchEvent) => {
+      touchEndX.current = e.changedTouches[0].clientX;
+      const diff = touchStartX.current - touchEndX.current;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) handleNext();
+        else handlePrev();
+      }
+    },
+    [handleNext, handlePrev],
   );
 
   useEffect(() => {
@@ -41,30 +59,30 @@ export function Gallery({ products }: { products: Product[] }) {
 
   return (
     <>
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 pb-24">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+      <section className="px-6 pb-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-stone-200">
           {products.map((product, i) => (
             <button
               type="button"
               key={product.id}
               onClick={() => setSelected(i)}
-              className="group bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-lg transition-all duration-300 text-left w-full"
+              className="group bg-stone-50 text-left w-full overflow-hidden"
             >
               <div className="aspect-[3/4] relative overflow-hidden bg-stone-100">
                 <Image
                   src={product.src}
                   alt={product.title}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                  priority={i < 2}
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  priority={i < 4}
                 />
               </div>
-              <div className="p-5">
-                <h3 className="font-semibold text-lg text-stone-900">
+              <div className="p-4">
+                <h3 className="font-medium text-sm text-stone-900">
                   {product.title}
                 </h3>
-                <p className="text-sm text-stone-500 mt-1 leading-relaxed">
+                <p className="text-xs text-stone-400 mt-0.5">
                   {product.description}
                 </p>
               </div>
@@ -139,14 +157,19 @@ export function Gallery({ products }: { products: Product[] }) {
               </button>
             )}
 
-            <div className="relative w-full max-w-5xl h-[80vh]">
+            <div
+              className="relative w-full max-w-5xl h-[80vh]"
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
               <Image
                 src={products[selected].src}
                 alt={products[selected].title}
                 fill
-                className="object-contain"
+                className="object-contain select-none"
                 sizes="100vw"
                 priority
+                draggable={false}
               />
             </div>
 
